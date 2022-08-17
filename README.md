@@ -4,11 +4,24 @@ Dedicated to the biggest MilkShake lover Igor ❤️
 
 ## Installation
 ```
-git clone https://github.com/dayyass/milkshakelang.git
+pip install milkshakelang
 ```
 
 ## Usage
-Write milkshakelang [script](https://github.com/dayyass/milkshakelang/blob/main/script.milkshake):
+MilkShakeLang commands:
+- **give** [owner] [size] milkshake
+- **drink** [owner] milkshake [ounces]
+- **refill** [owner] milkshake [ounces]
+
+Available MilkShake sizes:
+- *demi* - 3 ounces
+- *short* - 8 ounces
+- *tall* - 12 ounces
+- *grande* - 16 ounces
+- *venti* - 24 ounces
+- *trenta* - 30 ounces
+
+Write MilkShakeLang [script](https://github.com/dayyass/milkshakelang/blob/main/script.milkshake):
 ```
 give Igor venti milkshake
 # Igor got Venti MilkShake (24 ounces)
@@ -52,7 +65,7 @@ refill Igor milkshake 16
 
 Run the script:
 ```
-python milkshakelang script.milkshake
+milkshakelang script.milkshake
 ```
 
 ## Requirements
