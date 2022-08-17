@@ -1,0 +1,2 @@
+class MilkShakeOverflowError(Exception):
+    pass

@@ -1,6 +1,6 @@
 # The Milk Shake Programming Language
 
-Dedicated to the biggest Milk Shake lover Igor ❤️
+Dedicated to the biggest MilkShake lover Igor ❤️
 
 ## Installation
 ```
@@ -35,6 +35,18 @@ drink Dani milkshake 16
 # Dani:
 # - Drank 16 ounces and finished my milkshake...
 # - I want more!
+
+
+refill Dani milkshake 16
+# Dani:
+# - Incredible, full cup of milkshake!
+
+refill Igor milkshake 16
+# Igor:
+# - Wow, 16 ounces of new milkshake!
+
+refill Igor milkshake 16
+# MilkShakeOverflowError: Milkshake was spilled on the floor!
 
 ```
 

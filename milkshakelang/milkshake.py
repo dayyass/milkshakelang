@@ -1,3 +1,5 @@
+from utils import MilkShakeOverflowError
+
 Size = {
     "demi": 3,
     "short": 8,
@@ -33,7 +35,7 @@ class MilkShake:
 
     def drink(
         self,
-        ounces: int,
+        ounces: int,  # TODO: validate positive number
     ) -> None:
 
         if self._volume == 0:
@@ -48,4 +50,21 @@ class MilkShake:
             self._volume -= ounces
 
         print(msg)
-        return
+
+    def refill(
+        self,
+        ounces: int,  # TODO: validate positive number
+    ) -> None:
+
+        if self._volume + ounces < Size[self.size]:
+            msg = f"{self.owner}:\n- Wow, {ounces} ounces of new milkshake!\n"
+            self._volume += ounces
+
+        elif self._volume + ounces == Size[self.size]:
+            msg = f"{self.owner}:\n- Incredible, full cup of milkshake!\n"
+            self._volume += ounces
+
+        else:
+            raise MilkShakeOverflowError("Milkshake was spilled on the floor!")
+
+        print(msg)

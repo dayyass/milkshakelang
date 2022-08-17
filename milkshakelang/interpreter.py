@@ -54,6 +54,17 @@ class AST:
             },
         )
 
+    @staticmethod
+    def refill_milkshake(tokens: List[str]) -> Node:
+        """
+                refill_milkshake
+                /      |      \
+            owner  milkshake  ounces
+        """
+
+        # the same code
+        return AST.drink_milkshake(tokens)
+
 
 class Interpreter:
     """
@@ -86,6 +97,8 @@ class Interpreter:
                 node = AST.give_milkshake(tokens)
             elif cmd == "drink":
                 node = AST.drink_milkshake(tokens)
+            elif cmd == "refill":
+                node = AST.refill_milkshake(tokens)
             else:
                 # TODO: choose Exception
                 raise Exception(f"Unknown command: {cmd}")
@@ -112,7 +125,12 @@ class Interpreter:
                 )
 
             elif node.cmd == "drink":
+                # TODO: try/except KeyError
                 people[node.args["owner"]].drink(node.args["ounces"])
+
+            elif node.cmd == "refill":
+                # TODO: try/except KeyError
+                people[node.args["owner"]].refill(node.args["ounces"])
 
             else:
                 # TODO: choose Exception
