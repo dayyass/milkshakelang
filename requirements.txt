@@ -1,0 +1,2 @@
+coverage==6.4.3  # dev
+pre-commit==2.19.0  # dev
