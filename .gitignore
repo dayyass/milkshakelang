@@ -12,3 +12,7 @@
 
 venv
 .idea
+
+milkshakelang.egg-info
+build
+dist

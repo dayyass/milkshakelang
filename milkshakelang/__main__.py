@@ -2,7 +2,11 @@ import sys
 
 from milkshakelang.interpreter import Interpreter
 
-if __name__ == "__main__":
+
+def main():
+    """
+    Main function and entrypoint.
+    """
 
     interpreter = Interpreter()
 
@@ -10,3 +14,7 @@ if __name__ == "__main__":
         script = fp.read()
 
     interpreter.interpret(script)
+
+
+if __name__ == "__main__":
+    main()

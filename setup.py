@@ -17,4 +17,9 @@ setup(
     license_files=["LICENSE"],
     url="https://github.com/dayyass/milkshakelang",
     packages=["milkshakelang"],
+    entry_points={
+        "console_scripts": [
+            "milkshakelang = milkshakelang.__main__:main",
+        ],
+    },
 )
