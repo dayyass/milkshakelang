@@ -1,7 +1,7 @@
 from collections import namedtuple
 from typing import List
 
-from milkshake import MilkShake
+from milkshakelang.milkshake import MilkShake
 
 Node = namedtuple(
     "Node",

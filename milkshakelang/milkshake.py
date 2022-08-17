@@ -1,4 +1,4 @@
-from utils import MilkShakeOverflowError
+from milkshakelang.utils import MilkShakeOverflowError
 
 Size = {
     "demi": 3,

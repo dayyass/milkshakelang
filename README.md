@@ -1,4 +1,4 @@
-# The Milk Shake Programming Language
+# The MilkShake Programming Language
 
 Dedicated to the biggest MilkShake lover Igor ❤️
 

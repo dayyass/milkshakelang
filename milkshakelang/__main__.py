@@ -1,6 +1,6 @@
 import sys
 
-from interpreter import Interpreter
+from milkshakelang.interpreter import Interpreter
 
 if __name__ == "__main__":
 
