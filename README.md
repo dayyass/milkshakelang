@@ -9,17 +9,17 @@ pip install milkshakelang
 
 ## Usage
 MilkShakeLang commands:
-- **give** [owner] [size] milkshake
-- **drink** [owner] milkshake [ounces]
-- **refill** [owner] milkshake [ounces]
+- **give** *[owner]* *[size]* milkshake
+- **drink** *[owner]* milkshake *[ounces]*
+- **refill** *[owner]* milkshake *[ounces]*
 
 Available MilkShake sizes:
-- *demi* - 3 ounces
-- *short* - 8 ounces
-- *tall* - 12 ounces
-- *grande* - 16 ounces
-- *venti* - 24 ounces
-- *trenta* - 30 ounces
+- demi - 3 ounces
+- short - 8 ounces
+- tall - 12 ounces
+- grande - 16 ounces
+- venti - 24 ounces
+- trenta - 30 ounces
 
 Write MilkShakeLang [script](https://github.com/dayyass/milkshakelang/blob/main/script.milkshake):
 ```
