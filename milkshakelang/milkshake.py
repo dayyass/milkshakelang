@@ -23,7 +23,29 @@ class MilkShake:
 
         self._volume: int = Size[size]
 
+        print(self._get_msg())
+
     def __repr__(self):
-        return (
-            f"{self.owner}'s {self.size.capitalize()} MilkShake ({self._volume} ounces)"
-        )
+        return f"{self.owner}'s {self.size.capitalize()} MilkShake ({self._volume} ounces)\n"
+
+    def _get_msg(self):
+        return f"{self.owner} got {self.size.capitalize()} MilkShake ({self._volume} ounces)\n"
+
+    def drink(
+        self,
+        ounces: int,
+    ) -> None:
+
+        if self._volume == 0:
+            msg = f"{self.owner}:\n- There is nothing to drink...\n- Need more milkshake!\n"
+
+        elif ounces >= self._volume:
+            msg = f"{self.owner}:\n- Drank {self._volume} ounces and finished my milkshake...\n- I want more!\n"
+            self._volume = 0
+
+        else:
+            msg = f"{self.owner}:\n- Drank {ounces} ounces - so delicious!\n"
+            self._volume -= ounces
+
+        print(msg)
+        return

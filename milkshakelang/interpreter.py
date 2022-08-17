@@ -22,7 +22,7 @@ class AST:
             owner   size   milkshake
         """
 
-        # TODO:
+        # TODO: add try/except
         cmd, owner, size, milkshake = tokens
 
         return Node(
@@ -31,6 +31,26 @@ class AST:
                 "owner": owner,
                 "size": size,
                 "milkshake": milkshake,  # TODO: remove redundant
+            },
+        )
+
+    @staticmethod
+    def drink_milkshake(tokens: List[str]) -> Node:
+        """
+                drink_milkshake
+                /      |      \
+            owner  milkshake  ounces
+        """
+
+        # TODO: add try/except
+        cmd, owner, milkshake, ounces = tokens
+
+        return Node(
+            cmd=cmd,
+            args={
+                "owner": owner,
+                "milkshake": milkshake,  # TODO: remove redundant
+                "ounces": int(ounces),  # TODO: allow not only int
             },
         )
 
@@ -56,12 +76,16 @@ class Interpreter:
 
         for statement in statement_list:
 
+            if (statement in {"\n", " ", ""}) or statement.startswith("#"):
+                continue
+
             tokens = self._lexicalize(statement)
             cmd = tokens[0]
 
             if cmd == "give":
                 node = AST.give_milkshake(tokens)
-
+            elif cmd == "drink":
+                node = AST.drink_milkshake(tokens)
             else:
                 # TODO: choose Exception
                 raise Exception(f"Unknown command: {cmd}")
@@ -82,14 +106,13 @@ class Interpreter:
 
             # TODO: remove code duplicates from _parse
             if node.cmd == "give":
-
-                milkshake = MilkShake(
+                people[node.args["owner"]] = MilkShake(
                     owner=node.args["owner"],
                     size=node.args["size"],
                 )
-                print(milkshake)
 
-                people[node.args["owner"]] = milkshake
+            elif node.cmd == "drink":
+                people[node.args["owner"]].drink(node.args["ounces"])
 
             else:
                 # TODO: choose Exception
